@@ -8,6 +8,6 @@ export default {
 
 <template>
     <div>
-        <h1 class="text-3xl font-bold underline">Login pingolo</h1>
+        <h1 class="text-3xl font-bold underline">Login View</h1>
     </div>
 </template>
