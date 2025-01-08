@@ -2,9 +2,11 @@ import { createRouter, createWebHistory } from "vue-router";
 import type { RouteRecordRaw } from "vue-router";
 import Login  from "../pages/Login/Login.vue";
 import Home from '../pages/Home/Home.vue';
+import { useAuthStore } from "../stores/auth.store";
 
 const isAuthenticated = () => {
-    return !!sessionStorage.getItem('token');
+    const authStore = useAuthStore();
+    return authStore.token !== '';
 };
 
 const routes: Array<RouteRecordRaw> = [
