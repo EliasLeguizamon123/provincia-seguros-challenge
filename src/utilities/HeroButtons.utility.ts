@@ -12,25 +12,25 @@ export const HeroButtons: HeroButton[] = [
     { 
         title: 'COTIZÁ Y CONTRATÁ TU \nSEGURO DE AUTO O MOTO \nFÁCIL CON BENEFICIOS', 
         text: '',
-        buttonText: 'Ver más',
+        buttonText: 'Cotizá acá',
         image: new URL('../assets/hero2.jpg', import.meta.url).href
     },
     { 
         title: 'WEB CLIENTES', 
         text: 'Nuevo diseño \ny más autogestión',
-        buttonText: 'Conocer más',
+        buttonText: 'Click acá',
         image: new URL('../assets/hero3.jpg', import.meta.url).href
     },
     { 
         title: 'SEGURO \nPyME', 
         text: 'Un seguro diseñado \npara proteger tu negocio',
-        buttonText: 'Conocer más',
+        buttonText: 'Cotizá acá',
         image: new URL('../assets/hero4.jpg', import.meta.url).href
     },
     { 
         title: 'DESCARGÁ LA APP\nY ACCEDÉ A\nNUESTROS SERVICIOS', 
         text: 'Llevá con vos la nueva app para tener todo lo que \nnecesitás a un dedo de distancia',
-        buttonText: 'Conocer más',
+        buttonText: 'Descargá acá',
         image: new URL('../assets/hero5.jpg', import.meta.url).href
     },
     { 

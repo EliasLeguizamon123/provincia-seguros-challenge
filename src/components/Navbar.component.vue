@@ -45,8 +45,8 @@ export default {
         </div>
 
         <h1 class="text-xl font-bold hidden md:block"> ¡Hola {{ authStore.loginData.username }}!</h1>
-        <button @click="navigateToLogin" class="bg-primary text-white p-2 rounded-lg flex direction-row items-center gap-2">
-            <span class="hidden sm:block">Salir</span>
+        <button @click="navigateToLogin" class="bg-primary text-white p-2 rounded-lg flex direction-row items-center gap-2 hover:bg-black hover:bg-opacity-40">
+            <span class="hidden sm:block ">Salir</span>
             <LogOutIcon class="w-6 h-6" />
         </button>
     </nav>
