@@ -3,6 +3,8 @@ import { ref } from 'vue';
 
 import LeftArrow from '../../../assets/icons/LeftArrow.vue';
 import RightArrow from '../../../assets/icons/RightArrow.vue';
+import { HeroButtons } from '../../../utilities/HeroButtons.utility.ts'
+import { formatTextWithLineBreaks } from '../../../utilities/Text.utility.ts';
 
 export default {
     name: 'Hero',
@@ -11,26 +13,8 @@ export default {
         RightArrow,
     },
     setup() {
-        const slides = ref([
-            { 
-                title: 'COTIZÁ Y CONTRATÁ TU \nSEGURO PARA TU HOGAR \nDE MAMERA FÁCIL Y RÁPIDA', 
-                text: '',
-                buttonText: 'Cotizá acá',
-                image: new URL('../../../assets/hero1.jpg', import.meta.url).href
-            },
-            { 
-                title: 'Descubre nuestros servicios', 
-                text: 'Servicios que mejorarán tu experiencia.\nNo pierdas la oportunidad de conocerlos.',
-                buttonText: 'Ver más',
-                image: new URL('../../../assets/hero2.jpg', import.meta.url).href
-            },
-            { 
-                title: 'Conoce a nuestro equipo', 
-                text: 'Somos un grupo de profesionales apasionados por lo que hacemos.\nÚnete a nosotros.',
-                buttonText: 'Conocer más',
-                image: new URL('../../../assets/hero3.jpg', import.meta.url).href
-            },
-        ]);
+        // Slides traidas de la utility HeroButtons
+        const slides = ref(HeroButtons);
         const currentSlide = ref(0);
 
         const nextSlide = () => {
@@ -41,17 +25,17 @@ export default {
             currentSlide.value = (currentSlide.value - 1 + slides.value.length) % slides.value.length;
         };
 
-        // Función para convertir los saltos de línea en <br>
-        const formatTextWithLineBreaks = (text: string) => {
-            return text.replace(/\n/g, '<br/>');
+        const click = () => {
+            alert('Funcionalidad desactivada');
         };
-
+        
         return {
             slides,
             currentSlide,
             nextSlide,
             prevSlide,
-            formatTextWithLineBreaks, // Exponer la función
+            click,
+            formatTextWithLineBreaks,
         };
     },
 };
@@ -65,14 +49,14 @@ export default {
             :class="['absolute inset-0 bg-cover bg-center transition-opacity duration-1000', { 'opacity-0': index !== currentSlide, 'opacity-100': index === currentSlide }]" 
             :style="{ backgroundImage: `url(${slide.image})` }"
         >
-            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-            <div class="absolute inset-0 flex items-center justify-center text-white p-4">
-                <div class="text-center">
-                    <!-- Usar la función formatTextWithLineBreaks para mostrar el título con saltos de línea -->
-                    <p class="text-4xl mb-4" v-html="formatTextWithLineBreaks(slide.title)"></p>
-                    <!-- Usar la función formatTextWithLineBreaks para mostrar el texto con saltos de línea -->
-                    <p class="text-xl mb-4" v-html="formatTextWithLineBreaks(slide.text)"></p>
-                    <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-opacity-80">{{ slide.buttonText }}</button>
+            <div class="absolute inset-0"></div>
+            <div class="absolute inset-0 flex items-center justify-center text-white p-4 md:justify-start md:ml-28">
+                <div class="text-center md:text-start">
+                    <p class="text-xl mb-6 md:text-4xl lg:text-5xl" v-html="formatTextWithLineBreaks(slide.title)"></p>
+                    <p class="text-xl mb-6" v-html="formatTextWithLineBreaks(slide.text)"></p>
+                    <button v-if="slide.buttonText !== ''" @click="click" class="bg-primary  z-50 text-white px-6 py-2 rounded-lg hover:bg-white hover:text-black">
+                        {{ slide.buttonText }}
+                    </button>
                 </div>
             </div>
         </div>
