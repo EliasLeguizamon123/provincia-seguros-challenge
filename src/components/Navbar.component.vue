@@ -14,24 +14,22 @@ export default {
         const router = useRouter();
         const authStore = useAuthStore();
 
-        const navigateToHome = () => {
-            router.push('/');
-        };
-
         const navigateToLogin = () => {
             router.push('/login');
             authStore.clearAuthData();
         };
 
-        const navigateToPlaces = () => {
-            console.log('Navigate to places');
-            router.push('/places');
+        const navigateToSection = (sectionId: string) => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
         };
+        
         return {
             NavbarLogo,
-            navigateToHome,
             navigateToLogin,
-            navigateToPlaces,
+            navigateToSection,
             authStore,
         };
     }
@@ -39,10 +37,11 @@ export default {
 </script>
 
 <template>
-    <nav class="w-full h-20 p-2 shadow-md bg-white  flex justify-between items-center sticky top-0 z-50 md:px-24">
-        <img :src="NavbarLogo" alt="Logo" class="cursor-pointer" @click="navigateToHome" />
+    <nav class="w-full h-20 p-2 shadow-md bg-white flex justify-between items-center sticky top-0 z-50 md:px-24">
+        <img @click="navigateToSection('hero-section')" :src="NavbarLogo" alt="Logo" class="cursor-pointer"/>
         <div class="w-2/3 flex justify-center items-end md:gap-4 md:pr-2">
-            <span @click="navigateToPlaces" class="cursor-pointer hover:text-primary">Sucursales</span>
+            <span @click="navigateToSection('places-section')" class="cursor-pointer hover:text-primary">Sucursales</span>
+            <span @click="navigateToSection('cotization-section')" class="cursor-pointer hover:text-primary">Cotizaciones</span>
         </div>
 
         <h1 class="text-xl font-bold hidden md:block"> ¡Hola {{ authStore.loginData.username }}!</h1>

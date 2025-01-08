@@ -25,16 +25,13 @@ export default {
             currentSlide.value = (currentSlide.value - 1 + slides.value.length) % slides.value.length;
         };
 
-        const click = () => {
-            alert('Funcionalidad desactivada');
-        };
+        
         
         return {
             slides,
             currentSlide,
             nextSlide,
             prevSlide,
-            click,
             formatTextWithLineBreaks,
         };
     },
@@ -42,7 +39,7 @@ export default {
 </script>
 
 <template>
-    <section class="relative w-full h-screen overflow-hidden">
+    <section class="relative w-full h-screen overflow-hidden" id="hero-section">
         <div 
             v-for="(slide, index) in slides" 
             :key="index" 
@@ -54,7 +51,7 @@ export default {
                 <div class="text-center md:text-start">
                     <p class="text-xl mb-6 md:text-4xl lg:text-5xl" v-html="formatTextWithLineBreaks(slide.title)"></p>
                     <p class="text-xl mb-6" v-html="formatTextWithLineBreaks(slide.text)"></p>
-                    <button v-if="slide.buttonText !== ''" @click="click" class="bg-primary  z-50 text-white px-6 py-2 rounded-lg hover:bg-white hover:text-black">
+                    <button v-if="slide.buttonText !== ''" class="bg-primary  z-50 text-white px-6 py-2 rounded-lg hover:bg-white hover:text-black">
                         {{ slide.buttonText }}
                     </button>
                 </div>

@@ -46,7 +46,7 @@ export default {
 </script>
 
 <template>
-    <div class="w-full h-screen">
+    <div class="w-full h-full">
         <Navbar />
         <Hero />
         <Cotization />
