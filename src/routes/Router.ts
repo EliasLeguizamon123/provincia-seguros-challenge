@@ -4,7 +4,7 @@ import Login  from "../pages/Login/Login.vue";
 import Home from '../pages/Home/Home.vue';
 
 const isAuthenticated = () => {
-    return !!localStorage.getItem('token');
+    return !!sessionStorage.getItem('token');
 };
 
 const routes: Array<RouteRecordRaw> = [
