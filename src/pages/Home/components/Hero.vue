@@ -1,10 +1,10 @@
 <script lang="ts">
 import { ref } from 'vue';
 
-import LeftArrow from '../../../assets/icons/LeftArrow.vue';
-import RightArrow from '../../../assets/icons/RightArrow.vue';
-import { HeroButtons } from '../../../utilities/HeroButtons.utility.ts'
-import { formatTextWithLineBreaks } from '../../../utilities/Text.utility.ts';
+import LeftArrow from '@/assets/icons/LeftArrow.vue';
+import RightArrow from '@/assets/icons/RightArrow.vue';
+import { HeroButtons } from '@/utilities/HeroButtons.utility.ts'
+import { formatTextWithLineBreaks } from '@/utilities/Text.utility.ts';
 
 export default {
     name: 'Hero',

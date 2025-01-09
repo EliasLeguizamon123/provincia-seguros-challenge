@@ -2,8 +2,8 @@
 import { Form, Field, ErrorMessage } from 'vee-validate';
 import * as yup from 'yup';
 
-import { LoginFormValues } from '../../../models/loginFormValues.model.ts';
-import { useAuthStore } from '../../../stores/auth.store.ts'
+import type LoginFormValues from '@/models/loginFormValues.model.ts';
+import { useAuthStore } from '@/stores/auth.store.ts'
 
 export default {
     name: 'LoginForm',

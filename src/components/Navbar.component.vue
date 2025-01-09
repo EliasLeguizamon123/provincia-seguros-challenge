@@ -1,9 +1,9 @@
 <script lang="ts">
 import { useRouter } from 'vue-router';
-import { useAuthStore } from '../stores/auth.store';
+import { useAuthStore } from '@/stores/auth.store';
 
-import NavbarLogo from '../assets/navbarLogo.png';
-import LogOutIcon from '../assets/icons/LogOutIcon.vue';
+import NavbarLogo from '@/assets/navbarLogo.png';
+import LogOutIcon from '@/assets/icons/LogOutIcon.vue';
 
 export default {
     name: 'Navbar',

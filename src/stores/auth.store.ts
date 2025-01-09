@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import type LoginFormValues   from '../models/loginFormValues.model';
+import type LoginFormValues   from '@/models/loginFormValues.model';
 
 export const useAuthStore = defineStore('auth', {
     state: () => ({

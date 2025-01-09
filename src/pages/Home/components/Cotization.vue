@@ -1,6 +1,6 @@
 <script lang="ts">
-import CellPhoneImage from '../../../assets/cellphone.png';
-import CotizationImage from '../../../assets/cotization.jpg';
+import CellPhoneImage from '@/assets/cellphone.png';
+import CotizationImage from '@/assets/cotization.jpg';
 
 export default {
     name: 'Cotization',

@@ -1,10 +1,10 @@
 <script lang="ts">
-import { ref } from 'vue';
-import { useAuthStore } from '../../stores/auth.store.ts';
-import Navbar from '../../components/Navbar.component.vue'
+import { useAuthStore } from '@/stores/auth.store';
+import Navbar from '@/components/Navbar.component.vue'
 import Hero from './components/Hero.vue';
 import Cotization from './components/Cotization.vue';
 import Places from './components/Places.vue';
+import Options from './components/Options.vue' 
 
 export default {
     name: 'Home',
@@ -13,6 +13,7 @@ export default {
         Hero,
         Cotization,
         Places,
+        Options,
     },
     setup() {
         const authStore = useAuthStore();
