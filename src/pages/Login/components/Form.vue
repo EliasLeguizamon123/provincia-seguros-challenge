@@ -2,7 +2,6 @@
 import { Form, Field, ErrorMessage } from 'vee-validate';
 import * as yup from 'yup';
 
-import type LoginFormValues from '@/models/loginFormValues.model.ts';
 import { useAuthStore } from '@/stores/auth.store.ts'
 
 export default {
@@ -26,7 +25,7 @@ export default {
         };
     },
     methods: {
-        onSubmit(values: LoginFormValues, { resetForm }: any) {
+        onSubmit(values: any, { resetForm }: any) {
             this.loading = true;
             if (values.username === 'admin' && values.password === 'admin') {
                 this.authStore.setLoginData(values);
