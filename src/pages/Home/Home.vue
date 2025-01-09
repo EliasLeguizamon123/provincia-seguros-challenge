@@ -6,6 +6,7 @@ import Cotization from './sections/Cotization.vue';
 import Places from './sections/Places.vue';
 import Options from './sections/Options.vue';
 import People from './sections/People.vue'
+import Company from './sections/Company.vue';
 
 export default {
     name: 'Home',
@@ -16,6 +17,7 @@ export default {
         Places,
         Options,
         People,
+        Company,
     },
     setup() {
         const authStore = useAuthStore();
@@ -55,6 +57,7 @@ export default {
         <Cotization />
         <Options />
         <People />
+        <Company />
         <Places />
     </div>
 </template>

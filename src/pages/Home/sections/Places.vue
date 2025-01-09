@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <section class="w-full h-96 bg-[#F9F9F9]" id="places-section">
+    <section class="w-full h-96 bg-[#F9F9F9] border border-gray-200" id="places-section">
         <div class="flex flex-col items-center h-full pt-12">
             <h1 class="text-4xl">Centros de atención</h1>
             <div class="flex flex-row items-center mt-4 gap-12">

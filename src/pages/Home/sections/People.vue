@@ -1,5 +1,4 @@
 <script lang="ts">
-
 import { personsIconButtons } from '@/utilities/Buttons.utility';
 import IconButton from '../components/IconButton.vue';
 
@@ -26,6 +25,5 @@ export default {
                 <IconButton :icon="button.icon" :title="button.title" :text="button.text" />
             </div>
         </div>
-
     </section>
 </template>
