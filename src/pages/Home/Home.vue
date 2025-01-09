@@ -9,6 +9,7 @@ import People from './sections/People.vue'
 import Company from './sections/Company.vue';
 import Repentance from './sections/Repentance.vue';
 import Security from './sections/Security.vue';
+import { getPlaces } from '@/services/places.services';
 
 export default {
     name: 'Home',
@@ -26,28 +27,9 @@ export default {
     setup() {
         const authStore = useAuthStore();
 
-        // // Estado para almacenar los resultados de las sucursales
-        // const places = ref<any[]>([]);
-        // const loading = ref(false);
-
-        // const API_KEY = 'TU_CLAVE_DE_API'; // Reemplaza con tu clave de API
-        // const query = 'Provincia Seguros, Buenos Aires, Argentina'; // Término de búsqueda
-
-        // const getPlaces = async () => {
-        //     const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${encodeURIComponent(query)}&key=${import.meta.env.VITE_MAPS_TOKEN}`;
-        //     try {
-        //         const response = await fetch(url);
-        //         const data = await response.json();
-        //         return data;
-        //     } catch (error) {
-        //         console.error('Error fetching data:', error);
-        //         return null;
-        //     }
-        // };
-
-        // getPlaces().then(data => {
-        //     console.log(data);
-        // });
+        getPlaces().then((places) => {
+            console.log(places);
+        });
 
         return { authStore };
     }
