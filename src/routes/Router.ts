@@ -6,7 +6,7 @@ import { useAuthStore } from "@/stores/auth.store";
 
 const isAuthenticated = () => {
     const authStore = useAuthStore();
-    return authStore.token !== '';
+    return sessionStorage.getItem('token') || authStore.token;
 };
 
 const routes: Array<RouteRecordRaw> = [

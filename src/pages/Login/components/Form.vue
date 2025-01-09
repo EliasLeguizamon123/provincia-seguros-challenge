@@ -30,6 +30,7 @@ export default {
             if (values.username === 'admin' && values.password === 'admin') {
                 this.authStore.setLoginData(values);
                 this.authStore.setToken('super-secret-token');
+                sessionStorage.setItem('token', 'super-secret-token');
                 this.$router.push('/');
             } else {
                 alert('Credenciales incorrectas');
