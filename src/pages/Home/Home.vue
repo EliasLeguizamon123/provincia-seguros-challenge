@@ -7,6 +7,8 @@ import Places from './sections/Places.vue';
 import Options from './sections/Options.vue';
 import People from './sections/People.vue'
 import Company from './sections/Company.vue';
+import Repentance from './sections/Repentance.vue';
+import Security from './sections/Security.vue';
 
 export default {
     name: 'Home',
@@ -18,6 +20,8 @@ export default {
         Options,
         People,
         Company,
+        Repentance,
+        Security,
     },
     setup() {
         const authStore = useAuthStore();
@@ -58,6 +62,8 @@ export default {
         <Options />
         <People />
         <Company />
+        <Repentance />
+        <Security />
         <Places />
     </div>
 </template>
