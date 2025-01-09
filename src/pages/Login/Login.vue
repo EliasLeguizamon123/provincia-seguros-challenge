@@ -1,5 +1,5 @@
 <script lang="ts">
-import UserIcon from '@/assets/icons/UserIcon.vue';
+import UserIcon from '@/assets/icons/User.icon.vue';
 import LoginForm from './components/Form.vue';
 
 export default {

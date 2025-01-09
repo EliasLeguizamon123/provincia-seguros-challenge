@@ -1,10 +1,11 @@
 <script lang="ts">
 import { useAuthStore } from '@/stores/auth.store';
-import Navbar from '@/components/Navbar.component.vue'
+import Navbar from '@/components/Navbar.component.vue';
 import Hero from './sections/Hero.vue';
 import Cotization from './sections/Cotization.vue';
 import Places from './sections/Places.vue';
-import Options from './sections/Options.vue' 
+import Options from './sections/Options.vue';
+import People from './sections/People.vue'
 
 export default {
     name: 'Home',
@@ -14,6 +15,7 @@ export default {
         Cotization,
         Places,
         Options,
+        People,
     },
     setup() {
         const authStore = useAuthStore();
@@ -52,6 +54,7 @@ export default {
         <Hero />
         <Cotization />
         <Options />
+        <People />
         <Places />
     </div>
 </template>
