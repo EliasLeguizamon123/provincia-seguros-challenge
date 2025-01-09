@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-    <div class="w-90 cursor-pointer hover:opacity-70 ease-in duration-200">
+    <div class="w-90 cursor-pointer hover:opacity-70 hover:scale-110 ease-in duration-200">
       <img :src="src" :alt="alt" class="w-full h-auto" />
     </div>
   </template>
