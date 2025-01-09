@@ -19,18 +19,16 @@ export default {
             authStore.clearAuthData();
         };
 
-        const navigateToSection = (sectionId: string) => {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-            }
-        };
+        const navigateToPlaces = () => {
+            router.push('/places');
+        }
         
         return {
             NavbarLogo,
             navigateToLogin,
-            navigateToSection,
+            navigateToPlaces,
             authStore,
+
         };
     }
 }
@@ -38,14 +36,13 @@ export default {
 
 <template>
     <nav class="w-full h-20 p-2 shadow-md bg-white flex justify-between items-center sticky top-0 z-50 md:px-24">
-        <img @click="navigateToSection('hero-section')" :src="NavbarLogo" alt="Logo" class="cursor-pointer"/>
+        <img :src="NavbarLogo" alt="Logo" class="cursor-pointer w-1/4" />
         <div class="w-2/3 flex justify-center items-end md:gap-4 md:pr-2">
-            <span @click="navigateToSection('places-section')" class="cursor-pointer hover:text-primary">Sucursales</span>
-            <span @click="navigateToSection('cotization-section')" class="cursor-pointer hover:text-primary">Cotizaciones</span>
+            <span @click="navigateToPlaces()" class="cursor-pointer hover:text-primary">Sucursales</span>
         </div>
 
         <h1 class="text-xl font-bold hidden md:block"> ¡Hola {{ authStore.loginData?.username }}!</h1>
-        <button @click="navigateToLogin" class="bg-primary text-white p-2 rounded-lg flex direction-row items-center gap-2 hover:bg-black hover:bg-opacity-40">
+        <button aria-label="Salir" @click="navigateToLogin" class="bg-primary text-white p-2 rounded-lg flex direction-row items-center gap-2 hover:bg-black hover:bg-opacity-40">
             <span class="hidden sm:block ">Salir</span>
             <LogOutIcon class="w-6 h-6" />
         </button>

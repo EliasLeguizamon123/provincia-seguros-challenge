@@ -57,13 +57,15 @@ export default {
                 </div>
             </div>
         </div>
-        <button 
+        <button
+            aria-label="Anterior"
             class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full focus:outline-none hover:bg-opacity-70" 
             @click="prevSlide"
         >
             <LeftArrow class="w-5 h-5" />
         </button>
         <button 
+            aria-label="Siguiente"
             class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full focus:outline-none hover:bg-opacity-70" 
             @click="nextSlide"
         >

@@ -24,8 +24,8 @@ export default {
             <component :is="icon" class="w-20 h-20 mx-auto mb-4 text-primary group-hover:text-gray-500" />
         </div>
         <div clas="text-center">
-              <h3 class="text-2xl text-primary mt-4 group-hover:underline">{{ title }}</h3>
-              <p class="text-primary text-sm group-hover:underline">{{ text }}</p>
+              <h3 class="text-lg text-primary mt-4 group-hover:underline">{{ title }}</h3>
+              <p class="text-primary text-xs group-hover:underline">{{ text }}</p>
         </div>
     </div>
 </template>
