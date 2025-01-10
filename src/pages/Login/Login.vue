@@ -1,4 +1,6 @@
 <script lang="ts">
+import { onMounted } from 'vue';
+
 import UserIcon from '@/assets/icons/User.icon.vue';
 import LoginForm from './components/Form.vue';
 
@@ -7,6 +9,11 @@ export default {
     components: {
         UserIcon,
         LoginForm,
+    },
+    setup () {
+        onMounted(() => {
+            sessionStorage.clear();
+        });
     }
 }
 

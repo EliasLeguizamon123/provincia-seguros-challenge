@@ -17,6 +17,7 @@ export default {
         const navigateToLogin = () => {
             router.push('/login');
             authStore.clearAuthData();
+            sessionStorage.clear();
         };
 
         const navigateToPlaces = () => {
