@@ -3,6 +3,7 @@ import type { RouteRecordRaw } from "vue-router";
 import Login  from "@/pages/Login/Login.vue";
 import Home from '@/pages/Home/Home.vue';
 import { useAuthStore } from "@/stores/auth.store";
+import Places from "@/pages/Places/Places.vue";
 
 const isAuthenticated = () => {
     const authStore = useAuthStore();
@@ -19,6 +20,12 @@ const routes: Array<RouteRecordRaw> = [
         path: '/',
         name: 'Home',
         component: Home,
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/places',
+        name: 'Places',
+        component: Places,
         meta: { requiresAuth: true }
     }
 ]
