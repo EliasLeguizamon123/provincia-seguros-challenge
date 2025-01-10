@@ -15,10 +15,7 @@ export default defineComponent({
         onMounted(async () => {
             getPlaces()
                 .then((response) => {
-                    places.value = response;
-                })
-                .catch((error) => {
-                    alert('Error al obtener lugares:', error);
+                    places.value = response as any[];
                 })
                 .finally(() => {
                     loading.value = false;

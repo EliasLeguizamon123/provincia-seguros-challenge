@@ -9,7 +9,6 @@ import People from './sections/People.vue'
 import Company from './sections/Company.vue';
 import Repentance from './sections/Repentance.vue';
 import Security from './sections/Security.vue';
-import { getPlaces } from '@/services/places.services';
 
 export default {
     name: 'Home',
