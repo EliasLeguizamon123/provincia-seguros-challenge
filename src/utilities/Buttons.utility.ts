@@ -19,6 +19,8 @@ import TruckIcon from "@/assets/icons/Truck.icon.vue";
 import WorldIcon from "@/assets/icons/World.icon.vue";
 import type IconButton from "@/models/iconButton.model";
 
+// Definición de un array de objetos `personsIconButtons` para representar los botones de la sección de personas
+
 export const personsIconButtons: IconButton[] = [
     {
         icon: CarIcon,
@@ -57,6 +59,8 @@ export const personsIconButtons: IconButton[] = [
     }
 
 ];
+
+// Definición de un array de objetos `companyIconButtons` para representar los botones de la sección de empresas.
 
 export const companyIconButtons: IconButton[] = [
     {

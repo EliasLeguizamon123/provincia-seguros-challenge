@@ -13,14 +13,24 @@ export default {
         RightArrow,
     },
     setup() {
-        // Slides traidas de la utility HeroButtons
+        /**
+         * `slides` contiene los datos de los botones de héroe.
+         * @type {Ref<Array>}
+        */
         const slides = ref(HeroButtons);
+        
         const currentSlide = ref(0);
 
+        /**
+         * Avanza al siguiente slide, ciclando al principio si es el último slide.
+        */
         const nextSlide = () => {
             currentSlide.value = (currentSlide.value + 1) % slides.value.length;
         };
 
+        /**
+         * Retrocede al slide anterior, ciclando al final si es el primer slide.
+        */
         const prevSlide = () => {
             currentSlide.value = (currentSlide.value - 1 + slides.value.length) % slides.value.length;
         };

@@ -2,6 +2,8 @@
 
 import type HeroButton from "@/models/heroButtons.model";
 
+// Definición de un array de objetos `HeroButtons` para representar las slides de la sección hero
+
 export const HeroButtons: HeroButton[] = [
     { 
         title: 'COTIZÁ Y CONTRATÁ TU \nSEGURO PARA TU HOGAR \nDE MAMERA FÁCIL Y RÁPIDA', 

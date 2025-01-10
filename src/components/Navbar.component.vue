@@ -11,19 +11,35 @@ export default {
         LogOutIcon,
     },
     setup() {
+        /**
+         * `router` permite la navegación entre diferentes rutas de la aplicación.
+         */
         const router = useRouter();
+        
+        /**
+         * `authStore` proporciona acceso a los datos de autenticación del usuario.
+         */
         const authStore = useAuthStore();
 
+        /**
+         * Navega a la página de inicio de sesión y limpia los datos de autenticación.
+         */
         const navigateToLogin = () => {
             router.push('/login');
             authStore.clearAuthData();
             sessionStorage.clear();
         };
 
+        /**
+         * Navega a la página de lugares (Sucursales).
+         */
         const navigateToPlaces = () => {
             router.push('/places');
         }
 
+        /**
+         * Navega a la página de inicio.
+         */
         const navigateToHome = () => {
             router.push('/');
         }

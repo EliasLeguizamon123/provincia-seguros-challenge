@@ -9,26 +9,38 @@ export default {
     setup() {
         const currentTip = ref(formatTextWithLineBreaks(tips[0]));
         let tipIndex = 0;
-        const direction = ref(''); // Track animation direction
+        const direction = ref('');
 
+        /**
+         * Actualiza el consejo de seguridad actual al siguiente en la lista.
+         */
         const updateTip = () => {
             direction.value = 'next';
             tipIndex = (tipIndex + 1) % tips.length;
             currentTip.value = formatTextWithLineBreaks(tips[tipIndex]);
         };
 
+        /**
+         * Muestra el siguiente consejo de seguridad y establece la dirección de transición a "next".
+         */
         const showNextTip = () => {
             direction.value = 'next';
             tipIndex = (tipIndex + 1) % tips.length;
             currentTip.value = formatTextWithLineBreaks(tips[tipIndex]);
         };
 
+        /**
+         * Muestra el consejo de seguridad anterior y establece la dirección de transición a "prev".
+         */
         const showPreviousTip = () => {
             direction.value = 'prev';
             tipIndex = (tipIndex - 1 + tips.length) % tips.length;
             currentTip.value = formatTextWithLineBreaks(tips[tipIndex]);
         };
 
+        /**
+         * Se ejecuta al montar el componente y actualiza el consejo de seguridad cada 6 segundos.
+         */
         onMounted(() => {
             setInterval(updateTip, 6000);
         });

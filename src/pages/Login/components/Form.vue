@@ -17,6 +17,11 @@ export default {
     },
     data() {
         return {
+            /**
+             * Esquema de validación para el formulario usando Yup.
+             * Valida que el nombre de usuario sea requerido y tenga al menos 4 caracteres,
+             * y que la contraseña sea requerida.
+             */
             schema: yup.object({
                 username: yup.string().required('El nombre de usuario es obligatorio').min(4, 'El nombre de usuario debe tener al menos 4 caracteres'),
                 password: yup.string().required('La contraseña es obligatoria'),
@@ -25,6 +30,12 @@ export default {
         };
     },
     methods: {
+        /**
+         * Maneja el envío del formulario.
+         * Valida las credenciales y establece el estado de autenticación si las credenciales son correctas.
+         * @param {any} values - Valores del formulario.
+         * @param {any} resetForm - Función para restablecer el formulario.
+         */
         onSubmit(values: any, { resetForm }: any) {
             this.loading = true;
             if (values.username === 'admin' && values.password === 'admin') {

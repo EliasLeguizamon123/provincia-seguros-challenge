@@ -1,3 +1,5 @@
+//* Lista de tips de seguridad vial, mostrados en la sección consejos.
+
 export const tips: string[] = [
     'Usá siempre cinturón de seguridad.',
     'Los niños y niñas siempre deben viajar en el asiento de atrás y con el cinturón de seguridad. Los menores de 12 años nunca deben ocupar el asiento del acompañante.',
