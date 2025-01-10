@@ -22,11 +22,16 @@ export default {
         const navigateToPlaces = () => {
             router.push('/places');
         }
+
+        const navigateToHome = () => {
+            router.push('/');
+        }
         
         return {
             NavbarLogo,
             navigateToLogin,
             navigateToPlaces,
+            navigateToHome,
             authStore,
 
         };
@@ -36,7 +41,7 @@ export default {
 
 <template>
     <nav class="w-full h-20 p-2 shadow-md bg-white flex justify-between items-center sticky top-0 z-50 md:px-24">
-        <img :src="NavbarLogo" alt="Logo" class="cursor-pointer w-1/6" />
+        <img @click="navigateToHome()" :src="NavbarLogo" alt="Logo" class="cursor-pointer w-1/6" />
         <div class="w-2/3 flex justify-center items-end md:gap-4 md:pr-2">
             <span @click="navigateToPlaces()" class="cursor-pointer hover:text-primary">Sucursales</span>
         </div>

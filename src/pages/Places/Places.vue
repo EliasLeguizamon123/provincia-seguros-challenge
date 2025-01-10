@@ -41,7 +41,8 @@ export default defineComponent({
                 <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-primary border-primary" role="status"></div>
                 <p class="mt-4">Buscando las direcciones más cercanas...</p>
             </div>
-            <div v-else>
+            <div v-else class="text-center">
+                <h1 class="text-xl font-bold underline p-4">Centros de Atención</h1>
                 <table class="min-w-full bg-white">
                     <thead>
                         <tr>
@@ -50,7 +51,7 @@ export default defineComponent({
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="place in places" :key="place.place_id" class="hover:bg-gray-100 cursor-auto hover:underline hover:text-primary">
+                        <tr v-for="place in places" :key="place.place_id" class="text-left hover:bg-gray-100 cursor-auto hover:underline hover:text-primary">
                             <td class="py-2 px-4 border-b">{{ place.formatted_address }} - {{ place.province }}</td>
                             <td class="py-2 px-4 border-b">{{ place.province }}</td>
                         </tr>
