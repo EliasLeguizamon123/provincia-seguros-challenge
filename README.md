@@ -17,7 +17,8 @@ Este proyecto es un challenge para Provincia seguros, esta dividido en 3 partes:
 - **Vue Router**: Para la gestión de rutas.
 - **Vite**: Herramienta de construcción rápida para aplicaciones Vue.
 - **Axios**: Cliente HTTP para realizar peticiones.
-- **Pinia**: Store para la gestión de estados. 
+- **Pinia**: Store para la gestión de estados.
+- **Google places API**: Obtener direcciones de Provincia Seguros en diferentes provincias de la Argentina (Se termino obtando por esta solución, ya que, la [Georef API](https://www.argentina.gob.ar/georef) no brinda soporte para la query solicitada en el ejercicio)
 
 ## Instalación
 
